@@ -1,3 +1,4 @@
+
 package Locations;
 
 import Characters.NPC;
@@ -11,4 +12,9 @@ public class Room {
     private NPC npc;
     private ArrayList<Item> items;
     private boolean isAvailable;
+
+    public String description(){
+        return null;
+    }
+
 }
