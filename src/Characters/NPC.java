@@ -11,7 +11,13 @@ public class NPC {
     public String Dialog(){
         return null;
     }
-    public String GiftItem(){
+    public String GiftItem(Item item, Player player){
         return null;
+    }
+
+    public NPC(String name, String description, Room room) {
+        this.name = name;
+        this.description = description;
+        Room = room;
     }
 }

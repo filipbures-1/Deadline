@@ -12,9 +12,24 @@ public class Room {
     private NPC npc;
     private ArrayList<Item> items;
     private boolean isAvailable;
+    private Room UpRoom;
+    private Room DownRoom;
+    private Room RightRoom;
+    private Room LeftRoom;
 
-    public String description(){
+    public String ShowRoomDescription(String description){
         return null;
     }
 
+    public Room(String name, String description, NPC npc, boolean isAvailable, Room upRoom, Room downRoom, Room rightRoom, Room leftRoom) {
+        this.name = name;
+        this.description = description;
+        this.npc = npc;
+        this.items = new ArrayList<>();
+        this.isAvailable = isAvailable;
+        UpRoom = upRoom;
+        DownRoom = downRoom;
+        RightRoom = rightRoom;
+        LeftRoom = leftRoom;
+    }
 }
