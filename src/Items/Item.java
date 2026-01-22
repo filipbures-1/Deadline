@@ -11,9 +11,11 @@ public class Item {
         return null;
     }
 
-    public Item(String name, String description, boolean isPickable) {
+    public Item(String name, String description, String id, boolean isPickable, boolean isDropable) {
         this.name = name;
         this.description = description;
+        this.id = id;
         this.isPickable = isPickable;
+        this.isDropable = isDropable;
     }
 }
