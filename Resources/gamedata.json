@@ -1,0 +1,141 @@
+{
+  "items": [
+    {
+      "id": "item_homeworklist",
+      "name": "Homework list",
+      "description": "List of homework you need to complete",
+      "isPickable": true,
+      "isDropable": true
+    },
+    {
+      "id": "item_phone",
+      "name": "Phone",
+      "description": "Just a regular phone",
+      "isPickable": false,
+      "isDropable": false
+    },
+    {
+      "id": "item_cheatsheet",
+      "name": "Cheatsheet",
+      "description": "A cheatsheet to help you finish your homework",
+      "isPickable": true,
+      "isDropable": true
+    },
+    {
+      "id": "item_drawingcompass",
+      "name": "Drawing compass",
+      "description": "A drawing compass that belongs to Theodores classmate. Tradeable for a cheatsheet",
+      "isPickable": true,
+      "isDropable": true
+    },
+    {
+      "id": "item_olddrawingcompass",
+      "name": "Old drawing compass",
+      "description": "An old, unuseable drawing compass. Tradeable for a cheatsheet",
+      "isPickable": true,
+      "isDropable": true
+    },
+    {
+      "id": "item_energydrink",
+      "name": "Energy drink",
+      "description": "An energy drink to replenish your energy",
+      "isPickable": true,
+      "isDropable": true
+    },
+    {
+      "id": "item_completedhomework",
+      "name": "Completed homework",
+      "description": "Completed homework and ready to turn in",
+      "isPickable": true,
+      "isDropable": true
+    }
+  ],
+  "characters": [
+    {
+      "id": "npc_nerdandrew",
+      "name": "Andrew",
+      "homeRoomId": "loc_adamsmainclass",
+      "description": "Andrew is a nerd who knows everything, but he is also very unwilling to help with anything. Talk to him to get the homework list"
+    },
+    {
+      "id": "npc_friendjacob",
+      "name": "Jacob",
+      "homeRoomId": "loc_library",
+      "description": "Jacob is a really good friend, he is willing to help with anything but he does cut corners here and there. Talk to him to get information about the cheatsheet"
+    },
+    {
+      "id": "npc_bullytheodore",
+      "name": "Theodore",
+      "homeRoomId": "loc_caffeteria",
+      "description": "The most fearsome bully in the whole school that does not give stuff out for the fun of it, he always wants something in return. Talk to him to get a deal for the cheatsheet"
+    },
+    {
+      "id": "npc_theodoresclassmate",
+      "name": "Theodores classmate",
+      "homeRoomId": "loc_theodoresmainclass",
+      "description": "Not much is known about him, other than he has beef with Theodore. Steal his drawing compass to get the cheatsheet from Theodore"
+    },
+    {
+      "id": "npc_principal",
+      "name": "Principal",
+      "homeRoomId": "loc_principalsoffice",
+      "description": "Grumpy principal that hates students that turn in their homework last second. Turn in your homework to finally be done"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_adamshouse",
+      "name": "Adams house",
+      "description": "It is just Adams house, this is where he does all of his homework",
+      "neighbors": ["loc_schoolyard"]
+    },
+    {
+      "id": "loc_schoolyard",
+      "name": "School yard",
+      "description": "Just a school yard nothing to see here",
+      "neighbors": ["loc_adamshouse", "loc_hallwayleftside"]
+    },
+    {
+      "id": "loc_hallwayleftside",
+      "name": "Left side of the hallway",
+      "description": "Left side of the long school hallway",
+      "neighbors": ["loc_schoolyard", "loc_adamsmainclass", "loc_hallwayrightside","loc_caffeteria"]
+    },
+    {
+      "id": "loc_adamsmainclass",
+      "name": "Adams main classroom",
+      "description": "Adams main classroom, the school nerd Andrew hangs out here often",
+      "neighbors": ["loc_hallwayleftside"]
+    },
+    {
+      "id": "loc_caffeteria",
+      "name": "Caffeteria",
+      "description": "Schools caffeteria, Theodore usually steals other peoples lunch money here",
+      "neighbors": ["loc_hallwayleftside"]
+    },
+    {
+      "id": "loc_hallwayrightside",
+      "name": "Right side of the hallway",
+      "description": "Right side of the long school hallway",
+      "neighbors": ["loc_hallwayleftside", "loc_library", "loc_principalsoffice", "loc_theodoresmainclass"]
+    },
+    {
+      "id": "loc_library",
+      "name": "Library",
+      "description": "The school library, Jacob likes to study and read books here",
+      "neighbors": ["loc_hallwayrightside"]
+    },
+    {
+      "id": "loc_theodoresmainclass",
+      "name": "Theodores main classroom",
+      "description": "Theodores main classroom, Theodores biggest enemy spends time here",
+      "neighbors": ["loc_hallwayrightside"]
+    },
+    {
+      "id": "loc_principalsoffice",
+      "name": "Principals office",
+      "description": "The principals office, a lot of kids get scolded here and others turn in their homework here.",
+      "neighbors": ["loc_hallwayrightside"]
+    }
+  ]
+}

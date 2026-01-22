@@ -4,14 +4,22 @@ import Items.Item;
 import Locations.Room;
 
 public class NPC {
+    private String id;
     private String name;
+    private String homeRoomId;
     private String description;
-    private Room Room;
 
     public String Dialog(){
         return null;
     }
-    public String GiftItem(){
+    public String GiftItem(Item item, Player player){
         return null;
+    }
+
+    public NPC(String id, String name, String homeRoomId, String description) {
+        this.id = id;
+        this.name = name;
+        this.homeRoomId = homeRoomId;
+        this.description = description;
     }
 }
