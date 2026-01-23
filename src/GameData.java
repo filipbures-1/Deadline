@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Represents the game data loaded from a JSON file.
@@ -17,7 +19,6 @@ public class GameData {
     public ArrayList<Item> items;
     public ArrayList<NPC> characters;
     public ArrayList<Room> rooms;
-
     /**
      * Loads game data from a JSON file.
      * @param resourcePath path to the resource file
@@ -61,6 +62,13 @@ public class GameData {
         }
         throw new IllegalArgumentException("Room with the following id does not exist: " + id);
     }
-
-
+    public void RoomConnection(){
+        for (Room room : rooms){
+            for (Room room2 : rooms) {
+                if (room.getNeighborIds().equals(room2.getId())){
+                    room.getNeighbors().add(room2);
+                }
+            }
+        }
+    }
 }

@@ -87,61 +87,61 @@
       "id": "loc_adamshouse",
       "name": "Adams house",
       "description": "It is just Adams house, this is where he does all of his homework",
-      "neighbors": ["loc_schoolyard"],
+      "neighborIds": ["loc_schoolyard"],
       "items": ["item_completedhomework"]
     },
     {
       "id": "loc_schoolyard",
       "name": "School yard",
       "description": "Just a school yard nothing to see here",
-      "neighbors": ["loc_adamshouse", "loc_hallwayleftside"],
+      "neighborIds": ["loc_adamshouse", "loc_hallwayleftside"],
       "items": ["item_olddrawingcompass"]
     },
     {
       "id": "loc_hallwayleftside",
       "name": "Left side of the hallway",
       "description": "Left side of the long school hallway",
-      "neighbors": ["loc_schoolyard", "loc_adamsmainclass", "loc_hallwayrightside","loc_caffeteria"]
+      "neighborIds": ["loc_schoolyard", "loc_adamsmainclass", "loc_hallwayrightside","loc_caffeteria"]
     },
     {
       "id": "loc_adamsmainclass",
       "name": "Adams main classroom",
       "description": "Adams main classroom, the school nerd Andrew hangs out here often",
-      "neighbors": ["loc_hallwayleftside"],
+      "neighborIds": ["loc_hallwayleftside"],
       "items": ["item_homeworklist"]
     },
     {
       "id": "loc_caffeteria",
       "name": "Caffeteria",
       "description": "Schools caffeteria, Theodore usually steals other peoples lunch money here",
-      "neighbors": ["loc_hallwayleftside"],
+      "neighborIds": ["loc_hallwayleftside"],
       "items": ["item_cheatsheet"]
     },
     {
       "id": "loc_hallwayrightside",
       "name": "Right side of the hallway",
       "description": "Right side of the long school hallway",
-      "neighbors": ["loc_hallwayleftside", "loc_library", "loc_principalsoffice", "loc_theodoresmainclass"],
+      "neighborIds": ["loc_hallwayleftside", "loc_library", "loc_principalsoffice", "loc_theodoresmainclass"],
       "items": ["item_energydrink"]
     },
     {
       "id": "loc_library",
       "name": "Library",
       "description": "The school library, Jacob likes to study and read books here",
-      "neighbors": ["loc_hallwayrightside"]
+      "neighborIds": ["loc_hallwayrightside"]
     },
     {
       "id": "loc_theodoresmainclass",
       "name": "Theodores main classroom",
       "description": "Theodores main classroom, Theodores biggest enemy spends time here",
-      "neighbors": ["loc_hallwayrightside"],
+      "neighborIds": ["loc_hallwayrightside"],
       "items": ["item_drawingcompass"]
     },
     {
       "id": "loc_principalsoffice",
       "name": "Principals office",
       "description": "The principals office, a lot of kids get scolded here and others turn in their homework here.",
-      "neighbors": ["loc_hallwayrightside"]
+      "neighborIds": ["loc_hallwayrightside"]
     }
   ]
 }

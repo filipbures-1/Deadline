@@ -32,6 +32,14 @@ public class Player {
         return null;
     }
 
+    public Room getCurrentRoom() {
+        return CurrentRoom;
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        CurrentRoom = currentRoom;
+    }
+
     public Player(String name, String description, Inventory inventory, Room currentRoom) {
         this.name = name;
         this.description = description;

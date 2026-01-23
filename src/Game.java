@@ -11,16 +11,16 @@ public class Game {
     public void inicialization(){
         commands = new HashMap<>();
         world = GameData.loadGameDataFromResources("/gamedata.json");
-        System.out.println(world.characters.size());
-        System.out.println(world.items.size());
-        System.out.println(world.rooms.size());
+        System.out.println(world.characters);
+        System.out.println(world.items);
+        System.out.println(world.rooms);
         //TODO pridat commands
         //commands.put("pohyb", new Movementplayer));
-
     }
 
     public void start(){
         inicialization();
+        world.RoomConnection();
         //zde bude herni smycka
     }
 }

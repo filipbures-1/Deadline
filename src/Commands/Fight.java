@@ -2,7 +2,7 @@ package Commands;
 
 public class Fight implements Commands{
     @Override
-    public String execute() {
+    public String execute(String commands) {
         return "";
     }
 
