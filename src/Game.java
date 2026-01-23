@@ -11,6 +11,7 @@ public class Game {
     public void inicialization(){
         commands = new HashMap<>();
         world = GameData.loadGameDataFromResources("/gamedata.json");
+        world.RoomConnection();
         System.out.println(world.characters);
         System.out.println(world.items);
         System.out.println(world.rooms);
@@ -20,7 +21,6 @@ public class Game {
 
     public void start(){
         inicialization();
-        world.RoomConnection();
         //zde bude herni smycka
     }
 }

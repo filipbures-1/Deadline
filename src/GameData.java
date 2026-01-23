@@ -65,8 +65,10 @@ public class GameData {
     public void RoomConnection(){
         for (Room room : rooms){
             for (Room room2 : rooms) {
-                if (room.getNeighborIds().equals(room2.getId())){
-                    room.getNeighbors().add(room2);
+                for (String NeighborIds : room.getNeighborIds()){
+                    if (NeighborIds.equals(room2.getId())){
+                        room.AddNeighbors(room2);
+                    }
                 }
             }
         }
