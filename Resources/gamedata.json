@@ -5,7 +5,7 @@
       "name": "Homework list",
       "description": "List of homework you need to complete",
       "isPickable": true,
-      "isDropable": true
+      "isDropable": true,
     },
     {
       "id": "item_phone",
@@ -13,6 +13,13 @@
       "description": "Just a regular phone",
       "isPickable": false,
       "isDropable": false
+    },
+    {
+      "id": "item_homeworkphoto",
+      "name": "Homework photo",
+      "description": "A photo of the homework",
+      "isPickable": true,
+      "isDropable": true
     },
     {
       "id": "item_cheatsheet",
@@ -88,7 +95,9 @@
       "name": "Adams house",
       "description": "It is just Adams house, this is where he does all of his homework",
       "neighborIds": ["loc_schoolyard"],
-      "items": ["item_completedhomework"]
+      "items": ["item_completedhomework"],
+      "locked": true,
+      "itemsrequiered": ["item_homeworklist", "item_cheatsheet", "item_homeworkphoto"]
     },
     {
       "id": "loc_schoolyard",

@@ -9,7 +9,7 @@ public class Player {
     private String description;
     private Inventory inventory;
     private Room CurrentRoom;
-
+    private Item CurrentItem;
 
     public Item PickUpItem(Item item){
         return null;
@@ -37,15 +37,22 @@ public class Player {
     public Room getCurrentRoom() {
         return CurrentRoom;
     }
+    public Inventory getInventory(){
+        return inventory;
+    }
+    public Item getCurrentItem(){
+        return CurrentItem;
+    }
 
     public void setCurrentRoom(Room currentRoom) {
         CurrentRoom = currentRoom;
     }
 
-    public Player(String name, String description, Inventory inventory, Room currentRoom) {
+    public Player(String name, String description, Inventory inventory, Room currentRoom, Item currentItem) {
         this.name = name;
         this.description = description;
         this.inventory = inventory;
         CurrentRoom = currentRoom;
+        CurrentItem = currentItem;
     }
 }

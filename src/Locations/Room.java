@@ -14,6 +14,9 @@ public class Room {
     private ArrayList<String> items;
     private ArrayList<Room> neighbors;
     private ArrayList<String> neighborIds;
+    private ArrayList<String> requiredItems;
+    private String ItemsRequiered;
+    private boolean isLocked;
 
     //private boolean isAvailable;
 
@@ -46,7 +49,20 @@ public class Room {
         }
         neighbors.add(room);
     }
-// zjistujeme mistnot podle jmena do ktere se chceme dostat pomoci move commandu
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void setLocked(boolean locked) {
+        isLocked = locked;
+    }
+
+    public String getItemsRequiered() {
+        return ItemsRequiered;
+    }
+
+    // zjistujeme mistnot podle jmena do ktere se chceme dostat pomoci move commandu
     public Room GetNeighborByName(String moveRoomName){
         for (Room neighbor: neighbors){
             if (neighbor.getName().equals(moveRoomName)){
@@ -59,7 +75,6 @@ public class Room {
     public String getName() {
         return name;
     }
-
 
     public String getDescription() {
         return description;

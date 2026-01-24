@@ -18,4 +18,8 @@ public class Item {
         this.isPickable = isPickable;
         this.isDropable = isDropable;
     }
+
+    public String getId() {
+        return id;
+    }
 }
