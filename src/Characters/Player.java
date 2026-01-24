@@ -10,6 +10,7 @@ public class Player {
     private Inventory inventory;
     private Room CurrentRoom;
 
+
     public Item PickUpItem(Item item){
         return null;
     }
@@ -25,8 +26,9 @@ public class Player {
     public Item UseItem(Item item){
         return null;
     }
-    public Room MoveRooms(String direction){
-        return null;
+    public Room MoveRooms(String roomMoveName){
+        CurrentRoom = CurrentRoom.GetNeighborByName(roomMoveName);
+        return CurrentRoom;
     }
     public String Talk(NPC npc){
         return null;

@@ -46,6 +46,15 @@ public class Room {
         }
         neighbors.add(room);
     }
+// zjistujeme mistnot podle jmena do ktere se chceme dostat pomoci move commandu
+    public Room GetNeighborByName(String moveRoomName){
+        for (Room neighbor: neighbors){
+            if (neighbor.getName().equals(moveRoomName)){
+                return neighbor;
+            }
+        }
+        return null;
+    }
 
     public String getName() {
         return name;
