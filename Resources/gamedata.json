@@ -5,7 +5,7 @@
       "name": "Homework list",
       "description": "List of homework you need to complete",
       "isPickable": true,
-      "isDropable": true,
+      "isDropable": true
     },
     {
       "id": "item_phone",

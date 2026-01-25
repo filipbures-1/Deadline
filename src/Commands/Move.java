@@ -1,36 +1,34 @@
 package Commands;
 
 import Characters.Player;
-import Items.Item;
 import Locations.Room;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Move implements Commands{
     private Player player;
+
+    public Move(Player player) {
+        this.player = player;
+    }
+
     @Override
     public String execute(String commands) {
-        String[] parts = commands.split(" ");
+        String[] parts = commands.split(" ", 2);
         if (parts.length < 2) {
             return  "Select where you want to go";
         }
         Room currentRoom = player.getCurrentRoom();
         String RoomMoveName = parts[1];
-        ArrayList<Room> neighbors = currentRoom.getNeighbors();
-        if (!neighbors.contains(RoomMoveName)) {
+        if (currentRoom == null){
+            return "The player doesnt have a current room";
+        }
+        Room RoomMove = currentRoom.GetNeighborByName(RoomMoveName);
+        if (RoomMove == null){
             return "Select a neighboring room";
         }
-//        Room RoomMove = null;
-//        for (Room room :) {
-//            if (room.getName().equals(RoomMoveName)) {
-//                RoomMove = room;
-//                break;
-//            }
-//        }
-        return null;
-    }
+        player.setCurrentRoom(RoomMove);
+        return "You have moved to " + RoomMove.getName();
 
+    }
     @Override
     public boolean exit() {
         return false;
