@@ -1,6 +1,6 @@
 import Characters.Player;
 import Commands.Commands;
-import Commands.Move;
+import Commands.*;
 import Items.Inventory;
 
 import java.util.HashMap;
@@ -21,7 +21,18 @@ public class Game {
         //TODO pridat commands
         Inventory inventory = new Inventory();
         player = new Player("Adam","Main player", inventory, world.findLocation("loc_adamshouse"), null);
+        commands.put("talk", new Dialog());
+        commands.put("drop", new Drop());
+        commands.put("exit", new Exit());
+        commands.put("fight", new Fight());
+        commands.put("give", new Give());
+        commands.put("help", new Help());
+        commands.put("hint", new Hint());
+        commands.put("inventory", new InventoryCommand());
         commands.put("move", new Move(player));
+        commands.put("pick up", new PickUp());
+        commands.put("steal", new Steal());
+        commands.put("use", new Use());
         }
 
     public void start() {
