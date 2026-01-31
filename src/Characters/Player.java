@@ -12,8 +12,28 @@ public class Player {
     private Item CurrentItem;
 
     public Item PickUpItem(Item item){
+        if (item == null){
+            return null;
+        }
+        if (!item.isPickable()) {
+            //System.out.println("You cannot pick up this item.");
+            return null;
+        }
+        if (inventory == null){
+            return null;
+        }
+        boolean added = inventory.AddItem(item);
+        if (added == true){
+            if (CurrentRoom != null){
+                CurrentRoom.removeItemFromRoom(item.getId());
+            }
+            return item;
+        }
+        //System.out.println("Your inventory is full.");
         return null;
     }
+
+
     public Item DropItem(Item item){
         return null;
     }

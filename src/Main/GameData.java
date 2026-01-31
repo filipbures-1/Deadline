@@ -1,3 +1,5 @@
+package Main;
+
 import Characters.NPC;
 import Items.Item;
 import Locations.Room;
@@ -6,8 +8,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Represents the game data loaded from a JSON file.
@@ -22,7 +22,7 @@ public class GameData {
     /**
      * Loads game data from a JSON file.
      * @param resourcePath path to the resource file
-     * @return a GameData object filled with the loaded data
+     * @return a Main.GameData object filled with the loaded data
      */
     public static GameData loadGameDataFromResources(String resourcePath) {
         //Vytvoření objektu pro práci s JSON souborem
@@ -37,7 +37,7 @@ public class GameData {
                         " (Check if file exists in src/main/resources).");
             }
 
-            //Přečte celý JSON a vytvoří instanci GameData, naplní vlastnosti podle názvů klíčů v JSONU, vrátí se hotová třída GameData
+            //Přečte celý JSON a vytvoří instanci Main.GameData, naplní vlastnosti podle názvů klíčů v JSONU, vrátí se hotová třída Main.GameData
             return gson.fromJson(
                     new InputStreamReader(is, StandardCharsets.UTF_8),
                     GameData.class

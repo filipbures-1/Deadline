@@ -22,4 +22,20 @@ public class Item {
     public String getId() {
         return id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isPickable() {
+        return isPickable;
+    }
+
+    public boolean isDropable() {
+        return isDropable;
+    }
 }

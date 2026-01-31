@@ -102,6 +102,24 @@ public class Room {
                 ", items=" + items +
                 '}';
     }
-
+    public ArrayList<String> getItemsInRoom(){
+        if(items == null) {
+            items = new ArrayList<>();
+            System.out.println("There are no items in this room.");
+        }
+        return items;
+    }
+    public boolean removeItemFromRoom(String itemId){
+        if (items == null){
+            return false;
+        }
+        return items.remove(itemId);
+    }
+    public void addItemToRoom(String itemId){
+        if(items == null){
+            items = new ArrayList<>();
+        }
+        items.add(itemId);
+    }
 
 }

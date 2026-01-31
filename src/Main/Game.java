@@ -1,3 +1,5 @@
+package Main;
+
 import Characters.Player;
 import Commands.Commands;
 import Commands.*;
@@ -18,9 +20,8 @@ public class Game {
         System.out.println(world.characters);
         System.out.println(world.items);
         System.out.println(world.rooms);
-        //TODO pridat commands
         Inventory inventory = new Inventory();
-        player = new Player("Adam","Main player", inventory, world.findLocation("loc_adamshouse"), null);
+        player = new Player("Adam","Main.Main player", inventory, world.findLocation("loc_adamshouse"), null);
         commands.put("talk", new Dialog());
         commands.put("drop", new Drop());
         commands.put("exit", new Exit());
@@ -30,7 +31,7 @@ public class Game {
         commands.put("hint", new Hint());
         commands.put("inventory", new InventoryCommand());
         commands.put("move", new Move(player));
-        commands.put("pick up", new PickUp());
+        commands.put("pick", new PickUp(player, world));
         commands.put("steal", new Steal());
         commands.put("use", new Use());
         }
