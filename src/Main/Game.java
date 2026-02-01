@@ -24,7 +24,7 @@ public class Game {
         commands.put("drop", new Drop(player));
         commands.put("exit", new Exit());
         commands.put("fight", new Fight());
-        commands.put("give", new Give());
+        commands.put("give", new Give(player));
         commands.put("help", new Help());
         commands.put("hint", new Hint());
         commands.put("inventory", new InventoryCommand(player));
