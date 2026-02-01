@@ -40,6 +40,10 @@ public class Item {
         return isPickable;
     }
 
+    public void setPickable(boolean pickable) {
+        isPickable = pickable;
+    }
+
     public boolean isDropable() {
         return isDropable;
     }
