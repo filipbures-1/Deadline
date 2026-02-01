@@ -27,7 +27,7 @@ public class Game {
         commands.put("give", new Give());
         commands.put("help", new Help());
         commands.put("hint", new Hint());
-        commands.put("inventory", new InventoryCommand());
+        commands.put("inventory", new InventoryCommand(player));
         commands.put("move", new Move(player));
         commands.put("pick", new PickUp(player, world));
         commands.put("steal", new Steal());
