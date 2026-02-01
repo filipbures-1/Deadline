@@ -16,7 +16,7 @@ public class Help implements Commands{
                 "\nsteal <Item> from <Character> - Steal an item from a character" +
                 "\nfight - Fight to start doing your homework" +
                 "\nuse <Item> - Use an item from your inventory" +
-                "\nhint - Get a hint for your current situation" +
+                "\nhint - Get a hint on how to finish the game" +
                 "\nexit - Exit the game";
     }
 

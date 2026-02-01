@@ -1,11 +1,10 @@
+
 package Commands;
 
-import Characters.Player;
-
-public class Dialog implements Commands{
+public class Dialog implements Commands {
     @Override
     public String execute(String commands) {
-        return "";
+        return "I might need a little assistance with this command.";
     }
 
     @Override
