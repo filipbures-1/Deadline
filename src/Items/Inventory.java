@@ -7,8 +7,8 @@ public class Inventory {
     private ArrayList<Item> items;
     private int Capacity;
 
-    public ArrayList<Item> ShowInventory(){
-        return null;
+    public ArrayList<Item> getItemsFromInventory(){
+        return items;
     }
 
     public Inventory() {

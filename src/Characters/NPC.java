@@ -22,4 +22,20 @@ public class NPC {
         this.homeRoomId = homeRoomId;
         this.description = description;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHomeRoomId() {
+        return homeRoomId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

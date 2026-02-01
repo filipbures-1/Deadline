@@ -73,4 +73,14 @@ public class GameData {
             }
         }
     }
+    public void NPCConnection(){
+        for (NPC npc : characters){
+            for (Room room : rooms) {
+                if (room.getId().equals(npc.getHomeRoomId())){
+                    room.AddNPCtoRoom(npc);
+                    break;
+                }
+            }
+        }
+    }
 }

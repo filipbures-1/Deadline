@@ -4,6 +4,8 @@ import Items.Inventory;
 import Items.Item;
 import Locations.Room;
 
+import java.util.ArrayList;
+
 public class Player {
     private String name;
     private String description;
@@ -66,6 +68,31 @@ public class Player {
 
     public void setCurrentRoom(Room currentRoom) {
         CurrentRoom = currentRoom;
+        System.out.println("You are in: " + CurrentRoom.getName());
+        ArrayList<Room> neighbors = CurrentRoom.getNeighbors();
+        if (neighbors == null || neighbors.isEmpty()) {
+            System.out.println("Neighbours: none");
+        } else {
+            StringBuilder StringNeighbours = new StringBuilder("Neighbours: ");
+            for (Room room : neighbors) {
+                if (room != null && room.getName() != null) {
+                    StringNeighbours.append(room.getName()).append(", ");
+                }
+            }
+            System.out.println(StringNeighbours.toString());
+        }
+        ArrayList<NPC> npcsInRoom = CurrentRoom.getNpcsInRoom();
+        if (npcsInRoom == null || npcsInRoom.isEmpty()) {
+            System.out.println("People in the room: none");
+        } else {
+            StringBuilder StringNPCs = new StringBuilder("People in the room: ");
+            for (NPC npc : npcsInRoom) {
+                if (npc != null && npc.getName() != null) {
+                    StringNPCs.append(npc.getName()).append(", ");
+                }
+            }
+            System.out.println(StringNPCs.toString());
+        }
     }
 
     public Player(String name, String description, Inventory inventory, Room currentRoom, Item currentItem) {
@@ -74,5 +101,6 @@ public class Player {
         this.inventory = inventory;
         CurrentRoom = currentRoom;
         CurrentItem = currentItem;
+        setCurrentRoom(currentRoom);
     }
 }

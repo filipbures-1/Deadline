@@ -17,13 +17,11 @@ public class Game {
         commands = new HashMap<>();
         world = GameData.loadGameDataFromResources("/gamedata.json");
         world.RoomConnection();
-        System.out.println(world.characters);
-        System.out.println(world.items);
-        System.out.println(world.rooms);
+        world.NPCConnection();
         Inventory inventory = new Inventory();
         player = new Player("Adam","Main.Main player", inventory, world.findLocation("loc_adamshouse"), null);
         commands.put("talk", new Dialog());
-        commands.put("drop", new Drop());
+        commands.put("drop", new Drop(player));
         commands.put("exit", new Exit());
         commands.put("fight", new Fight());
         commands.put("give", new Give());

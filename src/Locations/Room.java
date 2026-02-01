@@ -17,6 +17,7 @@ public class Room {
     private ArrayList<String> requiredItems;
     private String ItemsRequiered;
     private boolean isLocked;
+    private ArrayList<NPC> npcs;
 
     //private boolean isAvailable;
 
@@ -121,5 +122,22 @@ public class Room {
         }
         items.add(itemId);
     }
-
+    public ArrayList<NPC> getNpcsInRoom() {
+        if (npcs == null){
+            npcs = new ArrayList<>();
+        }
+        return npcs;
+    }
+    public void AddNPCtoRoom(NPC npc){
+        if (npcs == null){
+            npcs = new ArrayList<>();
+        }
+        npcs.add(npc);
+    }
+    public boolean removeNPCFromRoom(NPC npc){
+        if (npcs == null){
+            return false;
+        }
+        return npcs.remove(npc);
+    }
 }
