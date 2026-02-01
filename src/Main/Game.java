@@ -18,8 +18,9 @@ public class Game {
         world = GameData.loadGameDataFromResources("/gamedata.json");
         world.RoomConnection();
         world.NPCConnection();
+        world.ItemConnection();
         Inventory inventory = new Inventory();
-        player = new Player("Adam","Main.Main player", inventory, world.findLocation("loc_adamshouse"), null);
+        player = new Player("Adam","Main.Main player", inventory, world.findLocation("loc_adamshouse"), null, world);
         commands.put("talk", new Dialog());
         commands.put("drop", new Drop(player));
         commands.put("exit", new Exit());

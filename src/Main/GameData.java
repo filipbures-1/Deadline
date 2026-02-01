@@ -83,4 +83,15 @@ public class GameData {
             }
         }
     }
+    public void ItemConnection(){
+        for (Item item : items){
+            String placedId = item.getPlacedRoomId();
+            for (Room room : rooms){
+                if (room.getId().equals(placedId)){
+                    room.addItemToRoom(item.getId());
+                    break;
+                }
+            }
+        }
+    }
 }

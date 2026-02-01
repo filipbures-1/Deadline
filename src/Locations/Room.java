@@ -106,7 +106,6 @@ public class Room {
     public ArrayList<String> getItemsInRoom(){
         if(items == null) {
             items = new ArrayList<>();
-            System.out.println("There are no items in this room.");
         }
         return items;
     }

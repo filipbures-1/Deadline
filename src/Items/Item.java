@@ -6,9 +6,14 @@ public class Item {
     private String id;
     private boolean isPickable;
     private boolean isDropable;
+    private String PlacedRoomId;
+
 
     public String ShowItemDescription(){
         return null;
+    }
+    public Item(){
+
     }
 
     public Item(String name, String description, String id, boolean isPickable, boolean isDropable) {
@@ -37,5 +42,9 @@ public class Item {
 
     public boolean isDropable() {
         return isDropable;
+    }
+
+    public String getPlacedRoomId() {
+        return PlacedRoomId;
     }
 }

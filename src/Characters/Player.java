@@ -3,6 +3,7 @@ package Characters;
 import Items.Inventory;
 import Items.Item;
 import Locations.Room;
+import Main.GameData;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ public class Player {
     private Inventory inventory;
     private Room CurrentRoom;
     private Item CurrentItem;
+    private GameData world;
 
     public Item PickUpItem(Item item){
         if (item == null){
@@ -93,14 +95,32 @@ public class Player {
             }
             System.out.println(StringNPCs.toString());
         }
+        ArrayList<String> itemsInRoom = CurrentRoom.getItemsInRoom();
+        if (itemsInRoom == null || itemsInRoom.isEmpty()) {
+            System.out.println("Items in the room: none");
+        } else {
+            StringBuilder StringItems = new StringBuilder("Items in the room: ");
+            for (String id : itemsInRoom) {
+                String ItemDisplayName = id;
+                    for (Item item : world.items) {
+                        if (item.getId().equals(id)) {
+                            ItemDisplayName = item.getName();
+                            break;
+                        }
+                    }
+                StringItems.append(ItemDisplayName).append(", ");
+            }
+            System.out.println(StringItems.toString());
+        }
     }
 
-    public Player(String name, String description, Inventory inventory, Room currentRoom, Item currentItem) {
+    public Player(String name, String description, Inventory inventory, Room currentRoom, Item currentItem, GameData world) {
         this.name = name;
         this.description = description;
         this.inventory = inventory;
         CurrentRoom = currentRoom;
         CurrentItem = currentItem;
+        this.world = world;
         setCurrentRoom(currentRoom);
     }
 }

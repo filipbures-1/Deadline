@@ -4,8 +4,9 @@
       "id": "item_homeworklist",
       "name": "Homework list",
       "description": "List of homework you need to complete",
-      "isPickable": true,
-      "isDropable": true
+      "isPickable": false,
+      "isDropable": true,
+      "PlacedRoomId": "loc_adamsmainclass"
     },
     {
       "id": "item_phone",
@@ -18,42 +19,47 @@
       "id": "item_homeworkphoto",
       "name": "Homework photo",
       "description": "A photo of the homework",
-      "isPickable": true,
-      "isDropable": true
+      "isPickable": false,
+      "isDropable": true,
+        "PlacedRoomId": "loc_library"
     },
     {
       "id": "item_cheatsheet",
       "name": "Cheatsheet",
       "description": "A cheatsheet to help you finish your homework",
-      "isPickable": true,
-      "isDropable": true
+      "isPickable": false,
+      "isDropable": true,
+        "PlacedRoomId": "loc_caffeteria"
     },
     {
       "id": "item_drawingcompass",
       "name": "Drawing compass",
       "description": "A drawing compass that belongs to Theodores classmate. Tradeable for a cheatsheet",
-      "isPickable": true,
-      "isDropable": true
+      "isPickable": false,
+      "isDropable": true,
+        "PlacedRoomId": "loc_theodoresmainclass"
     },
     {
       "id": "item_olddrawingcompass",
       "name": "Old drawing compass",
       "description": "An old, unuseable drawing compass. Tradeable for a cheatsheet",
       "isPickable": true,
-      "isDropable": true
+      "isDropable": true,
+        "PlacedRoomId": "loc_schoolyard"
     },
     {
       "id": "item_energydrink",
       "name": "Energy drink",
       "description": "An energy drink to replenish your energy",
       "isPickable": true,
-      "isDropable": true
+      "isDropable": true,
+      "PlacedRoomId": "loc_hallwayrightside"
     },
     {
       "id": "item_completedhomework",
       "name": "Completed homework",
       "description": "Completed homework and ready to turn in",
-      "isPickable": true,
+      "isPickable": false,
       "isDropable": true
     }
   ],
@@ -95,7 +101,6 @@
       "name": "Adams house",
       "description": "It is just Adams house, this is where he does all of his homework",
       "neighborIds": ["loc_schoolyard"],
-      "items": ["item_completedhomework"],
       "locked": true,
       "itemsrequiered": ["item_homeworklist", "item_cheatsheet", "item_homeworkphoto"]
     },
@@ -103,8 +108,7 @@
       "id": "loc_schoolyard",
       "name": "School yard",
       "description": "Just a school yard nothing to see here",
-      "neighborIds": ["loc_adamshouse", "loc_hallwayleftside"],
-      "items": ["item_olddrawingcompass"]
+      "neighborIds": ["loc_adamshouse", "loc_hallwayleftside"]
     },
     {
       "id": "loc_hallwayleftside",
@@ -116,22 +120,19 @@
       "id": "loc_adamsmainclass",
       "name": "Adams main classroom",
       "description": "Adams main classroom, the school nerd Andrew hangs out here often",
-      "neighborIds": ["loc_hallwayleftside"],
-      "items": ["item_homeworklist"]
+      "neighborIds": ["loc_hallwayleftside"]
     },
     {
       "id": "loc_caffeteria",
       "name": "Caffeteria",
       "description": "Schools caffeteria, Theodore usually steals other peoples lunch money here",
-      "neighborIds": ["loc_hallwayleftside"],
-      "items": ["item_cheatsheet"]
+      "neighborIds": ["loc_hallwayleftside"]
     },
     {
       "id": "loc_hallwayrightside",
       "name": "Right side of the hallway",
       "description": "Right side of the long school hallway",
-      "neighborIds": ["loc_hallwayleftside", "loc_library", "loc_principalsoffice", "loc_theodoresmainclass"],
-      "items": ["item_energydrink"]
+      "neighborIds": ["loc_hallwayleftside", "loc_library", "loc_principalsoffice", "loc_theodoresmainclass"]
     },
     {
       "id": "loc_library",
@@ -143,8 +144,7 @@
       "id": "loc_theodoresmainclass",
       "name": "Theodores main classroom",
       "description": "Theodores main classroom, Theodores biggest enemy spends time here",
-      "neighborIds": ["loc_hallwayrightside"],
-      "items": ["item_drawingcompass"]
+      "neighborIds": ["loc_hallwayrightside"]
     },
     {
       "id": "loc_principalsoffice",
