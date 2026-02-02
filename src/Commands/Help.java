@@ -2,24 +2,24 @@ package Commands;
 
 import Characters.Player;
 
+import javax.imageio.IIOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Help implements Commands{
     @Override
     public String execute(String commands) {
-        return "Available commands: " +
-                "\nhelp - Show this help message" +
-                "\nmove <Room> - Move to a specified room" +
-                "\npick <Item> - Pick up an item" +
-                "\ndrop <Item> - Drop an item from your inventory" +
-                "\ninventory - Show your current inventory" +
-                "\ntalk <Character> - Talk to a character" +
-                "\ngive <Item> to <Character> - Give an item to a character" +
-                "\nsteal <Item> from <Character> - Steal an item from a character" +
-                "\nfight - Fight to start doing your homework" +
-                "\nuse <Item> - Use an item from your inventory" +
-                "\nhint - Get a hint on how to finish the game" +
-                "\nexit - Exit the game" +
-                "\nmap - Show map";
-
+        try { BufferedReader helpreader = new BufferedReader(new FileReader("Resources/help"));
+            String line;
+            while ((line = helpreader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IIOException e){
+            System.out.println("Unable to load map");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return " ";
     }
 
     @Override

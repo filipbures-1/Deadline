@@ -1,0 +1,15 @@
+--------------------< Usable Commands >--------------------
+help - Show this help message
+move <Room> - Move to a specified room
+pick <Item> - Pick up an item
+drop <Item> - Drop an item from your inventory
+inventory - Show your current inventory
+talk <Character> - Talk to a character
+give <Item> <Character> - Give an item to a character
+steal <Item> - Steal an item from a character
+fight - Fight to start doing your homework
+use <Item> - Use an item from your inventory
+hint - Get a hint on how to finish the game
+exit - Exit the game
+map - Show map
+-----------------------------------------------------------
