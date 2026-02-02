@@ -33,6 +33,7 @@ public class Game {
         commands.put("pick", new PickUp(player, world));
         commands.put("steal", new Steal(player, world));
         commands.put("use", new Use(player));
+        commands.put("map", new Map(player));
         }
 
     public void start() {

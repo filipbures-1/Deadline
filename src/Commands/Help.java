@@ -17,7 +17,9 @@ public class Help implements Commands{
                 "\nfight - Fight to start doing your homework" +
                 "\nuse <Item> - Use an item from your inventory" +
                 "\nhint - Get a hint on how to finish the game" +
-                "\nexit - Exit the game";
+                "\nexit - Exit the game" +
+                "\nmap - Show map";
+
     }
 
     @Override

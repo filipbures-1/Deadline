@@ -118,7 +118,7 @@
     },
     {
       "id": "loc_adamsmainclass",
-      "name": "Adams main classroom",
+      "name": "Adams homeroom",
       "description": "Adams main classroom, the school nerd Andrew hangs out here often",
       "neighborIds": ["loc_hallwayleftside"]
     },
@@ -142,7 +142,7 @@
     },
     {
       "id": "loc_theodoresmainclass",
-      "name": "Theodores main classroom",
+      "name": "Theodores homeroom",
       "description": "Theodores main classroom, Theodores biggest enemy spends time here",
       "neighborIds": ["loc_hallwayrightside"]
     },
