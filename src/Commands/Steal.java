@@ -19,7 +19,7 @@ public class Steal implements Commands {
         String[] parts = commands.split(" ", 2);
         String itemToSteal = parts[1];
         Room current = player.getCurrentRoom();
-        if (current == null || ! "theodores main classroom".equalsIgnoreCase(current.getName())) {
+        if (!"Theodores homeroom".equalsIgnoreCase(current.getName())) {
             return "You cant steal here, go to Theodores classroom.";
         }
         Item found = null;

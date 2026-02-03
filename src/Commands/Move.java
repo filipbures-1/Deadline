@@ -26,8 +26,7 @@ public class Move implements Commands{
             return "Select a neighboring room";
         }
         player.setCurrentRoom(RoomMove);
-        return "You have moved to " + RoomMove.getName();
-
+        return "";
     }
     @Override
     public boolean exit() {

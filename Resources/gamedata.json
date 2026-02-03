@@ -60,7 +60,8 @@
       "name": "Completed homework",
       "description": "Completed homework and ready to turn in",
       "isPickable": false,
-      "isDropable": true
+      "isDropable": true,
+      "PlacedRoomId": "loc_adamshouse"
     }
   ],
   "characters": [

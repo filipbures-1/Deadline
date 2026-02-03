@@ -67,6 +67,9 @@ public class Player {
     public Item getCurrentItem(){
         return CurrentItem;
     }
+    public GameData getWorld(){
+        return world;
+    }
 
     public void setCurrentRoom(Room currentRoom) {
         CurrentRoom = currentRoom;
