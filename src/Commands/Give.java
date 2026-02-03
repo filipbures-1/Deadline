@@ -14,7 +14,6 @@ public class Give implements Commands {
 
     @Override
     public String execute(String commands) {
-        if (commands == null) return "Použití: give <NPC> <Item>";
         String[] parts = commands.split(" ", 3);
         String npcToGiveName = parts[1].trim();
         String itemToGiveName = parts[2].trim();

@@ -13,7 +13,6 @@ public class Use implements Commands {
 
     @Override
     public String execute(String commands) {
-
         String[] parts = commands.split(" ", 2);
         String itemToUse = parts[1];
         for (Item item : player.getInventory().getItemsFromInventory()) {

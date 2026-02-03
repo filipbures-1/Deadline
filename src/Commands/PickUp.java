@@ -17,9 +17,6 @@ public class PickUp implements Commands{
         String[] parts = commands.split(" ", 2);
         String itemName = parts[1].trim();
         Item itemToPick = null;
-        if(world == null || world.items == null){
-            return "Game data is not initialized.";
-        }
         for (Item item: world.items){
             if (item.getName().equalsIgnoreCase(itemName)) {
                 itemToPick = item;

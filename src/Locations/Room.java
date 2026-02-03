@@ -14,12 +14,11 @@ public class Room {
     private ArrayList<String> items;
     private ArrayList<Room> neighbors;
     private ArrayList<String> neighborIds;
-    private ArrayList<String> requiredItems;
-    private String ItemsRequiered;
+    private ArrayList<String> itemsrequiered;
+    private boolean locked;
     private boolean isLocked;
     private ArrayList<NPC> npcs;
 
-    //private boolean isAvailable;
 
     public String ShowRoomDescription(String description) {
         return null;
@@ -50,17 +49,17 @@ public class Room {
         }
         neighbors.add(room);
     }
-
-    public boolean isLocked() {
-        return isLocked;
+    public boolean isLocked(){
+        return locked;
     }
-
     public void setLocked(boolean locked) {
         isLocked = locked;
     }
-
-    public String getItemsRequiered() {
-        return ItemsRequiered;
+    public ArrayList<String> getItemsrequiered() {
+        if (itemsrequiered == null){
+            itemsrequiered = new ArrayList<>();
+        }
+        return itemsrequiered;
     }
 
     // zjistujeme mistnot podle jmena do ktere se chceme dostat pomoci move commandu
@@ -84,7 +83,6 @@ public class Room {
     public void setNeighbors(ArrayList<Room> neighbors) {
         this.neighbors = neighbors;
     }
-
     public Room(String description, String name, String id) {
         this.description = description;
         this.name = name;
