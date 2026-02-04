@@ -124,6 +124,13 @@ public class Player {
         CurrentRoom = currentRoom;
         CurrentItem = currentItem;
         this.world = world;
+
+        for (Item item : world.items){
+            if (item.getId().equals("item_phone")){
+                inventory.AddItem(item);
+                break;
+            }
+        }
         setCurrentRoom(currentRoom);
     }
 }
