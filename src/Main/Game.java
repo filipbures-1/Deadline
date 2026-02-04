@@ -5,6 +5,9 @@ import Commands.Commands;
 import Commands.*;
 import Items.Inventory;
 
+import javax.imageio.IIOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -34,9 +37,21 @@ public class Game {
         commands.put("steal", new Steal(player, world));
         commands.put("use", new Use(player));
         commands.put("map", new Map(player));
+    }
+    public void StartingText(){
+        try { BufferedReader startingtextreader = new BufferedReader(new FileReader("Resources/startingtext"));
+            String line;
+            while ((line = startingtextreader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IIOException e){
+            System.out.println("Unable to load the starting text.");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-
+    }
     public void start() {
+        StartingText();
         inicialization();
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
@@ -52,7 +67,6 @@ public class Game {
             } else {
                 System.out.println("Unknown command: " + commandName);
             }
-
         }
     }
 }
