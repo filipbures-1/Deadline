@@ -38,17 +38,19 @@ public class Game {
         commands.put("use", new Use(player));
         commands.put("map", new Map(player));
     }
-    public void StartingText(){
-        try { BufferedReader startingtextreader = new BufferedReader(new FileReader("Resources/startingtext"));
-            String line;
-            while ((line = startingtextreader.readLine()) != null) {
-                System.out.println(line);
+    public String StartingText(){
+            String text = "";
+            try { BufferedReader startingtextreader = new BufferedReader(new FileReader("Resources/startingtext"));
+                String line;
+                while ((line = startingtextreader.readLine()) != null) {
+                    text += line + "\n";
+                }
+            } catch (IIOException e){
+                System.out.println("Unable to load starting text.");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-        } catch (IIOException e){
-            System.out.println("Unable to load the starting text.");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+            return text;
     }
     public void start() {
         StartingText();

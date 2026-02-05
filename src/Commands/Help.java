@@ -9,18 +9,18 @@ import java.io.FileReader;
 public class Help implements Commands{
     @Override
     public String execute(String commands) {
-        String test = "";
+        String text = "";
         try { BufferedReader helpreader = new BufferedReader(new FileReader("Resources/help"));
             String line;
             while ((line = helpreader.readLine()) != null) {
-                test += line + "\n";
+                text += line + "\n";
             }
         } catch (IIOException e){
-            System.out.println("Unable to load map");
+            System.out.println("Unable to help tab.");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return test;
+        return text;
     }
 
     @Override

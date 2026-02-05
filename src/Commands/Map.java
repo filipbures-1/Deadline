@@ -15,17 +15,18 @@ public class Map implements Commands{
 
     @Override
     public String execute(String commands) {
+        String text = "";
         try { BufferedReader mapreader = new BufferedReader(new FileReader("Resources/map"));
-        String line;
-        while ((line = mapreader.readLine()) != null) {
-            System.out.println(line);
+            String line;
+            while ((line = mapreader.readLine()) != null) {
+                text += line + "\n";
             }
         } catch (IIOException e){
             System.out.println("Unable to load map");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return " ";
+        return text;
     }
 
     @Override
