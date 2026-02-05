@@ -33,7 +33,7 @@ public class PickUp implements Commands{
         if (pickedItem != null){
             return "You have picked up: " + pickedItem.getName();
         } else {
-            return "You cannot pick up this item.";
+            return "This item isnt available yet.";
         }
     }
 ;

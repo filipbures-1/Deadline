@@ -27,7 +27,7 @@ public class Game {
         commands.put("talk", new Dialog(player, world));
         commands.put("drop", new Drop(player));
         commands.put("exit", new Exit());
-        commands.put("fight", new Fight());
+        commands.put("fight", new Fight(player));
         commands.put("give", new Give(player));
         commands.put("help", new Help());
         commands.put("hint", new Hint());
@@ -65,7 +65,7 @@ public class Game {
                 String result = command.execute(line);
                 System.out.println(result);
             } else {
-                System.out.println("Unknown command: " + commandName);
+                System.out.println("Unknown command: " + commandName + " try 'help' to see the list of available commands.");
             }
         }
     }

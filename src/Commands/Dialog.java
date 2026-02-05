@@ -94,14 +94,8 @@ public class Dialog implements Commands {
             String response = scanner.nextLine();
             switch (response) {
                 case "1":
-                    for (Item item : world.items) {
-                        if ("item_homeworkphoto".equalsIgnoreCase(item.getId())) {
-                            item.setPickable(true);
-                            break;
-                        }
-                    }
                     return "Jacob: Yeah, sure, here you go. This isnt everything though. Theres a cheatsheet that helped me a lot. Theodore has it right now, hes in the Caffeteria." +
-                            "\nYou can now pick up the homework photo.";
+                            "\nYou can now use your phone to get the homework photo.";
                 case "2":
                     return "Jacob: Oh, just some sci-fi novel. Its pretty interesting!";
                 case "3":
