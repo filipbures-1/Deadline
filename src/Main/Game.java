@@ -57,7 +57,7 @@ public class Game {
         inicialization();
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
-        while (isRunning == true) {
+        while (isRunning) {
             System.out.println(">> ");
             String line = scanner.nextLine();
             String[] parts = line.split(" ", 2);
@@ -66,6 +66,9 @@ public class Game {
             if (command != null) {
                 String result = command.execute(line);
                 System.out.println(result);
+                if (command.exit()==true) {
+                    isRunning = false;
+                }
             } else {
                 System.out.println("Unknown command: " + commandName + " try 'help' to see the list of available commands.");
             }

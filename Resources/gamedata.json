@@ -4,7 +4,7 @@
       "id": "item_homeworklist",
       "name": "Homework list",
       "description": "List of homework you need to complete",
-      "isPickable": true,
+      "isPickable": false,
       "isDropable": true,
       "PlacedRoomId": "loc_adamsmainclass"
     },
@@ -19,7 +19,7 @@
       "id": "item_homeworkphoto",
       "name": "Homework photo",
       "description": "A photo of the homework",
-      "isPickable": true,
+      "isPickable": false,
       "isDropable": true,
         "PlacedRoomId": "loc_library"
     },
@@ -27,7 +27,7 @@
       "id": "item_cheatsheet",
       "name": "Cheatsheet",
       "description": "A cheatsheet to help you finish your homework",
-      "isPickable": true,
+      "isPickable": false,
       "isDropable": true,
         "PlacedRoomId": "loc_caffeteria"
     },
@@ -59,7 +59,7 @@
       "id": "item_completedhomework",
       "name": "Completed homework",
       "description": "Completed homework and ready to turn in",
-      "isPickable": false,
+      "isPickable": true,
       "isDropable": true,
       "PlacedRoomId": "loc_adamshouse"
     }

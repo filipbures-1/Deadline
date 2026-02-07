@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Fight implements Commands {
     private Player player;
     private Scanner scanner = new Scanner(System.in);
+    private boolean Exit = false;
 
     public Fight(Player player) {
         this.player = player;
@@ -15,6 +16,8 @@ public class Fight implements Commands {
 
     @Override
     public String execute(String commands) {
+        Exit = false;
+
         if (!"loc_adamshouse".equals(player.getCurrentRoom().getId())) {
             return "You can only do homework in Adams house.";
         }
@@ -22,7 +25,6 @@ public class Fight implements Commands {
         if (!hasRequiredItems()) {
             return "You need the cheatsheet, homework list, and homework photo to start doing your homework.";
         }
-
 
         if (hasEnergyDrink()) {
             System.out.println("------------------------------------------------");
@@ -108,8 +110,10 @@ public class Fight implements Commands {
                     System.out.println("You started working on your homework again!");
                     break;
                 case "2":
+                    Exit = true;
                     return "Why would you do that? You didnt finish the homework in time!";
                 case "3":
+                    Exit = true;
                     return "Those '5 more minutes' turned into a few hours. You didnt finish the homework in time!";
                 default:
                     System.out.println("This choice doesn't exist.");
@@ -128,11 +132,13 @@ public class Fight implements Commands {
             String response = scanner.nextLine().trim();
             switch (response) {
                 case "1":
+                    Exit = true;
                     return "You woke up at 8 AM the next day. Self explanatory.";
                 case "2":
                     System.out.println("You pushed through the tiredness and continued working!");
                     break;
                 case "3":
+                    Exit = true;
                     return "You obviously didnt finish the homework in time!";
                 default:
                     System.out.println("This choice doesn't exist.");
@@ -151,8 +157,10 @@ public class Fight implements Commands {
             String response = scanner.nextLine().trim();
             switch (response) {
                 case "1":
+                    Exit = true;
                     return "You got even more frustrated so you threw your homework out the window. You didnt finish it in time!";
                 case "2":
+                    Exit = true;
                     return "You closed your eyes and fell asleep. You didnt finish the homework in time!";
                 case "3":
                     System.out.println("Correct choice!");
@@ -165,11 +173,11 @@ public class Fight implements Commands {
         }
 
         return "Congratulations! You have successfully completed your homework!" +
-               "\nYou can now pick up the Completed homework.";
+                "\nYou can now pick up the Completed homework.";
     }
 
     @Override
     public boolean exit() {
-        return false;
+        return Exit;
     }
 }

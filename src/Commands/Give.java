@@ -8,12 +8,14 @@ import java.util.ArrayList;
 
 public class Give implements Commands {
     private Player player;
+    private boolean Exit = false;
     public Give(Player player) {
         this.player = player;
     }
 
     @Override
     public String execute(String commands) {
+        Exit = false;
         String[] parts = commands.split(" ", 3);
         String npcToGiveName = parts[1].trim();
         String itemToGiveName = parts[2].trim();
@@ -40,10 +42,8 @@ public class Give implements Commands {
                 if (npc.getName().equalsIgnoreCase("theodore")) {
                     if (itemToGive.getName().equalsIgnoreCase("old drawing compass")) {
                         player.getInventory().RemoveItem(itemToGive);
-                        String deathmessage = "Theodore beat you up. You lost.";
-                        System.out.println(deathmessage);
-                        System.exit(0);
-                        return deathmessage;
+                        Exit = true;
+                        return "Theodore beat you up, you lost";
                     }
 
                     if (itemToGive.getName().equalsIgnoreCase("drawing compass")) {
@@ -73,6 +73,7 @@ public class Give implements Commands {
                 if (npc.getName().equalsIgnoreCase("principal")) {
                     if (itemToGive.getName().equalsIgnoreCase("completed homework")) {
                         player.getInventory().RemoveItem(itemToGive);
+                        Exit = true;
                         return "You handed over your work to the Principal. You win!";
                     } else {
                         return "Principal only wants Completed homework.";
@@ -87,6 +88,6 @@ public class Give implements Commands {
 
     @Override
     public boolean exit() {
-        return false;
+        return Exit;
     }
 }

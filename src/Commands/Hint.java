@@ -1,7 +1,4 @@
 package Commands;
-
-import Characters.Player;
-
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
