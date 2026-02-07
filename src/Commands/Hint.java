@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class Hint implements Commands{
+    /**
+     * Executes the hint command, reading the hint file.
+     * @param commands command in the format "hint".
+     * @return hint file.
+     */
     @Override
     public String execute(String commands) {
         String text = "";

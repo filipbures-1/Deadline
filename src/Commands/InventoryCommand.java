@@ -1,9 +1,6 @@
 package Commands;
-
 import Characters.Player;
-import Items.Inventory;
 import Items.Item;
-
 import java.util.ArrayList;
 
 public class InventoryCommand implements Commands{
@@ -11,6 +8,11 @@ public class InventoryCommand implements Commands{
     public InventoryCommand(Player player) {
         this.player = player;
     }
+    /**
+     * Executes the inventory command, listing all items in the players inventory.
+     * @param commands command in the format "inventory".
+     * @return message listing the items in the inventory.
+     */
     @Override
     public String execute(String commands) {
         ArrayList<Item> items = player.getInventory().getItemsFromInventory();

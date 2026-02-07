@@ -17,6 +17,11 @@ public class Dialog implements Commands {
         this.world = world;
     }
 
+    /**
+     * Executes the dialog command with an NPC.
+     * @param commands command in the form "talk [npc name]".
+     * @return response form the NPC.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);
@@ -54,6 +59,12 @@ public class Dialog implements Commands {
         }
     }
 
+    /**
+     * Handles the dialog with Andrew.
+     * unlocks homework list through conversation.
+     * @param andrew NPC andrew
+     * @return response from Andrew.
+     */
     private String dialogueAndrew(NPC andrew) {
         while (true) {
             System.out.println("------------------------------------------------");
@@ -82,7 +93,12 @@ public class Dialog implements Commands {
             }
         }
     }
-
+    /**
+     * Handles the dialog with Jacob.
+     * provides information about the homework and unlocks the homework photo through conversation.
+     * @param jacob NPC jacob
+     * @return response from Jacob.
+     */
     private String dialogueJacob(NPC jacob) {
         while (true) {
             System.out.println("------------------------------------------------");
@@ -105,6 +121,13 @@ public class Dialog implements Commands {
             }
         }
     }
+
+    /**
+     * Handles the dialog with Theodore.
+     * provides information about the cheatsheet and unlocks the cheatsheet through conversation.
+     * @param theodore NPC theodore
+     * @return response from Theodore.
+     */
     private String dialogueTheodore(NPC theodore) {
         while (true) {
             System.out.println("------------------------------------------------");
@@ -126,6 +149,12 @@ public class Dialog implements Commands {
             }
         }
     }
+    /**
+     * Handles the dialog with the principal.
+     * Accepts homework submission.
+     * @param principal NPC principal
+     * @return response from the principal.
+     */
     private String dialoguePrincipal(NPC principal) {
         while (true) {
             System.out.println("------------------------------------------------");

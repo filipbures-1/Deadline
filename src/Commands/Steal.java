@@ -1,5 +1,4 @@
 package Commands;
-
 import Characters.Player;
 import Items.Item;
 import Main.GameData;
@@ -14,6 +13,12 @@ public class Steal implements Commands {
         this.world = world;
     }
 
+    /**
+     * Executes the steal command, allowing the player to steal an item if they are in Theodore's homeroom.
+     * Item becomes pickable after stealing.
+     * @param commands command in the format "steal [item name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);

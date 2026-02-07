@@ -3,7 +3,6 @@ import Characters.NPC;
 import Characters.Player;
 import Items.Item;
 import Main.GameData;
-
 import java.util.ArrayList;
 
 public class Give implements Commands {
@@ -13,6 +12,12 @@ public class Give implements Commands {
         this.player = player;
     }
 
+    /**
+     * Executes the give command, allowing the player to give an item to an NPC.
+     * Some actions might be different based on the NPC and item given.
+     * @param commands command in the format "give [npc name] [item name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         Exit = false;
@@ -61,7 +66,6 @@ public class Give implements Commands {
                                 break;
                             }
                         }
-
 
                         if (cheatsheetFound) {
                             return "Theodore accepted the deal, you can now pick up the Cheatsheet.";

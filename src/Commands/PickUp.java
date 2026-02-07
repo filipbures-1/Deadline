@@ -1,5 +1,4 @@
 package Commands;
-
 import Characters.Player;
 import Items.Item;
 import Main.GameData;
@@ -11,7 +10,11 @@ public class PickUp implements Commands{
         this.player = player;
         this.world = world;
     }
-
+    /**
+     * Executes the pick up command, allowing the player to pick up an item from the current room if possible.
+     * @param commands command in the format "pick [item name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);

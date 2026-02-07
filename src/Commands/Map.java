@@ -1,8 +1,5 @@
 package Commands;
-
 import Characters.Player;
-import com.google.gson.internal.bind.util.ISO8601Utils;
-
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,6 +10,11 @@ public class Map implements Commands{
         this.player = player;
     }
 
+    /**
+     * Executes the map command, reading the map file.
+     * @param commands command in the format "map".
+     * @return map file.
+     */
     @Override
     public String execute(String commands) {
         String text = "";

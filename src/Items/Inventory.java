@@ -15,6 +15,12 @@ public class Inventory {
         this.items = new ArrayList<>();
         Capacity = 5;
     }
+
+    /**
+     * Adds an item to the inventory if there is capacity.
+     * @param item the item to add.
+     * @return true if added successfully, false otherwise.
+     */
     public boolean AddItem(Item item){
         if(item == null){
             return false;
@@ -25,6 +31,11 @@ public class Inventory {
         items.add(item);
         return true;
     }
+    /**
+     * Removes an item from the inventory.
+     * @param item the item to remove.
+     * @return true if removed successfully, false otherwise.
+     */
     public boolean RemoveItem(Item item){
         if(item == null){
             return false;

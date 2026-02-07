@@ -13,6 +13,12 @@ public class Player {
     private Item CurrentItem;
     private GameData world;
 
+    /**
+     * Picks up an item and adds it to the players inventory if its pickable and exists in the current room.
+     * removes the item from the room if successfully picked up.
+     * @param item the item to pick up.
+     * @return the item if successfully picked up, null otherwise.
+     */
     public Item PickUpItem(Item item){
         if (item == null){
             return null;
@@ -36,6 +42,7 @@ public class Player {
     public Room getCurrentRoom() {
         return CurrentRoom;
     }
+
     public Inventory getInventory(){
         return inventory;
     }
@@ -43,6 +50,10 @@ public class Player {
     public GameData getWorld(){
         return world;
     }
+
+    /**
+     * Prints out items in the current room to console.
+     */
     public void GetItemInfoFromRoom(){
         ArrayList<String> itemsInRoom = CurrentRoom.getItemsInRoom();
         if (itemsInRoom == null || itemsInRoom.isEmpty()) {
@@ -62,6 +73,10 @@ public class Player {
             System.out.println(StringItems.toString());
         }
     }
+
+    /**
+     * Prints out NPCs in the current room to console.
+     */
     public void GetNpcInfoFromRoom(){
         ArrayList<NPC> npcsInRoom = CurrentRoom.getNpcsInRoom();
         if (npcsInRoom == null || npcsInRoom.isEmpty()) {
@@ -76,6 +91,10 @@ public class Player {
             System.out.println(StringNPCs.toString());
         }
     }
+
+    /**
+     * Prints out neighboring rooms to console.
+     */
     public void GetNeighbourInfoFromRoom(){
         ArrayList<Room> neighbors = CurrentRoom.getNeighbors();
         if (neighbors == null || neighbors.isEmpty()) {
@@ -91,6 +110,10 @@ public class Player {
         }
     }
 
+    /**
+     * Sets the current room of the player and prints out info about the room to console.
+     * @param currentRoom current room to set.
+     */
     public void setCurrentRoom(Room currentRoom) {
         CurrentRoom = currentRoom;
         System.out.println("You are in: " + CurrentRoom.getName());

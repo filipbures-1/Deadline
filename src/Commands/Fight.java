@@ -1,8 +1,6 @@
 package Commands;
-
 import Characters.Player;
 import Items.Item;
-
 import java.util.Scanner;
 
 public class Fight implements Commands {
@@ -14,27 +12,27 @@ public class Fight implements Commands {
         this.player = player;
     }
 
+    /**
+     * Executes the fight command to complete homework.
+     * @param commands command in the format "fight".
+     * @return result of the homework fight.
+     */
     @Override
     public String execute(String commands) {
         Exit = false;
-
         if (!"loc_adamshouse".equals(player.getCurrentRoom().getId())) {
             return "You can only do homework in Adams house.";
         }
-
         if (!hasRequiredItems()) {
             return "You need the cheatsheet, homework list, and homework photo to start doing your homework.";
         }
-
         if (hasEnergyDrink()) {
             System.out.println("------------------------------------------------");
             System.out.println("You have an Energy Drink in your inventory. Would you like to drink it to skip the homework fight?");
             System.out.println("------------------------------------------------");
             System.out.println("1) No");
             System.out.println("2) Yes");
-
             String energyChoice = scanner.nextLine().trim();
-
             switch (energyChoice) {
                 case "1":
                     return startFight();
@@ -48,6 +46,10 @@ public class Fight implements Commands {
         }
     }
 
+    /**
+     * Checks if the player has required items in their inventory.
+     * @return true if player has all required items, false otherwise.
+     */
     private boolean hasRequiredItems() {
         boolean hasCheatsheet = false;
         boolean hasHomeworkList = false;
@@ -66,6 +68,10 @@ public class Fight implements Commands {
         return hasCheatsheet && hasHomeworkList && hasHomeworkPhoto;
     }
 
+    /**
+     * Checks if the player has an energy drink in their inventory.
+     * @return true if player has energy drink, false otherwise.
+     */
     private boolean hasEnergyDrink() {
         for (Item item : player.getInventory().getItemsFromInventory()) {
             if ("item_energydrink".equals(item.getId())) {
@@ -75,15 +81,9 @@ public class Fight implements Commands {
         return false;
     }
 
-    private void removeEnergyDrink() {
-        for (Item item : player.getInventory().getItemsFromInventory()) {
-            if ("item_energydrink".equals(item.getId())) {
-                player.getInventory().RemoveItem(item);
-                break;
-            }
-        }
-    }
-
+    /**
+     * Makes the completed homework item pickable in the world.
+     */
     private void setCompletedHomeworkPickable() {
         for (Item item : player.getWorld().items) {
             if ("item_completedhomework".equals(item.getId())) {
@@ -93,6 +93,11 @@ public class Fight implements Commands {
         }
     }
 
+    /**
+     * Starts the homework fight.
+     * The player must make correct choices to complete the homework.
+     * @return message about the result of the fight.
+     */
     private String startFight() {
         System.out.println("------------------------------------------------");
         System.out.println("You ran into a few issues while doing your homework! What do you do?");

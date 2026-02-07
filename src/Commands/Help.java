@@ -1,12 +1,14 @@
 package Commands;
-
-import Characters.Player;
-
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class Help implements Commands{
+    /**
+     * Executes the help command, reading the help file.
+     * @param commands command in the format "help".
+     * @return help file.
+     */
     @Override
     public String execute(String commands) {
         String text = "";

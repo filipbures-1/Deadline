@@ -1,5 +1,4 @@
 package Items;
-
 public class Item {
     private String name;
     private String description;
@@ -9,9 +8,6 @@ public class Item {
     private String PlacedRoomId;
 
 
-    public String ShowItemDescription(){
-        return null;
-    }
     public Item(){
 
     }
@@ -24,6 +20,10 @@ public class Item {
         this.isDropable = isDropable;
     }
 
+    public boolean isDropable() {
+        return isDropable;
+    }
+
     public String getId() {
         return id;
     }
@@ -32,20 +32,12 @@ public class Item {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public boolean isPickable() {
         return isPickable;
     }
 
     public void setPickable(boolean pickable) {
         isPickable = pickable;
-    }
-
-    public boolean isDropable() {
-        return isDropable;
     }
 
     public String getPlacedRoomId() {

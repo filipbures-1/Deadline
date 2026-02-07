@@ -1,5 +1,4 @@
 package Main;
-
 import Characters.NPC;
 import Items.Item;
 import Locations.Room;
@@ -62,6 +61,10 @@ public class GameData {
         }
         throw new IllegalArgumentException("Room with the following id does not exist: " + id);
     }
+
+    /**
+     * Connects rooms based on their neighbor IDs.
+     */
     public void RoomConnection(){
         for (Room room : rooms){
             for (Room room2 : rooms) {
@@ -73,6 +76,9 @@ public class GameData {
             }
         }
     }
+    /**
+     * Connects NPCs to their respective home rooms.
+     */
     public void NPCConnection(){
         for (NPC npc : characters){
             for (Room room : rooms) {
@@ -83,6 +89,9 @@ public class GameData {
             }
         }
     }
+    /**
+     * Connects items to their respective placed rooms.
+     */
     public void ItemConnection(){
         for (Item item : items){
             String placedId = item.getPlacedRoomId();

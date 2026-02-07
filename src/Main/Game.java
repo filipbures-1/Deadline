@@ -1,10 +1,8 @@
 package Main;
-
 import Characters.Player;
 import Commands.Commands;
 import Commands.*;
 import Items.Inventory;
-
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,6 +14,10 @@ public class Game {
     private Player player;
     private HashMap<String, Commands> commands;
 
+    /**
+     * Initializes the game, loading game data and setting up commands.
+     * Creates the player and connects rooms, NPCs, and items.
+     */
     public void inicialization() {
         commands = new HashMap<>();
         world = GameData.loadGameDataFromResources("/gamedata.json");
@@ -38,6 +40,10 @@ public class Game {
         commands.put("use", new Use(player));
         commands.put("map", new Map(player));
     }
+    /**
+     * Reads and returns the starting text from the resources file.
+     * @return starting text.
+     */
     public String StartingText(){
             String text = "";
             try { BufferedReader startingtextreader = new BufferedReader(new FileReader("Resources/startingtext"));
@@ -50,8 +56,14 @@ public class Game {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            //System.out.println(text); // this method doesnt work without this system.out.println for some reason
             return text;
     }
+    /**
+     * Starts the game loop, processing user commands until exit.
+     * Displays starting text and initializes the game before entering the loop.
+     * Displayed to the player.
+     */
     public void start() {
         StartingText();
         inicialization();

@@ -1,10 +1,5 @@
-
 package Locations;
-
 import Characters.NPC;
-import Items.Item;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Room {
@@ -15,14 +10,8 @@ public class Room {
     private ArrayList<Room> neighbors;
     private ArrayList<String> neighborIds;
     private ArrayList<String> itemsrequiered;
-    private boolean locked;
-    private boolean isLocked;
     private ArrayList<NPC> npcs;
-
-
-    public String ShowRoomDescription(String description) {
-        return null;
-    }
+    private boolean isLocked;
 
     public String getId() {
         return id;
@@ -32,37 +21,46 @@ public class Room {
         return neighborIds;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public boolean isLocked() {
+        return isLocked;
     }
 
+    /**
+     * Gets the neighboring rooms of this room.
+     * @return list of neighboring rooms.
+     */
     public ArrayList<Room> getNeighbors() {
         if (neighbors == null) {
             neighbors = new ArrayList<>();
         }
         return neighbors;
     }
-
+    /**
+     * Adds a neighboring room to this room.
+     * @param room the neighboring room to add.
+     */
     public void AddNeighbors(Room room) {
         if (neighbors == null) {
             neighbors = new ArrayList<>();
         }
         neighbors.add(room);
     }
-    public boolean isLocked(){
-        return locked;
-    }
-    public void setLocked(boolean locked) {
-        isLocked = locked;
-    }
+
+    /**
+     * Gets the item IDs required to enter this room.
+     * @return list of requiered item IDs.
+     */
     public ArrayList<String> getItemsrequiered() {
         if (itemsrequiered == null){
             itemsrequiered = new ArrayList<>();
         }
         return itemsrequiered;
     }
-
-    // zjistujeme mistnot podle jmena do ktere se chceme dostat pomoci move commandu
+    /**
+     * Finds a neighboring room by its name.
+     * @param moveRoomName the name of the neighboring room to find.
+     * @return the neighboring room if found, null otherwise.
+     */
     public Room GetNeighborByName(String moveRoomName){
         for (Room neighbor: neighbors){
             if (neighbor.getName().equals(moveRoomName)){
@@ -76,13 +74,6 @@ public class Room {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setNeighbors(ArrayList<Room> neighbors) {
-        this.neighbors = neighbors;
-    }
     public Room(String description, String name, String id) {
         this.description = description;
         this.name = name;
@@ -101,40 +92,56 @@ public class Room {
                 ", items=" + items +
                 '}';
     }
+    /**
+     * Gets the items currently in this room.
+     * @return list of item IDs in the room.
+     */
     public ArrayList<String> getItemsInRoom(){
         if(items == null) {
             items = new ArrayList<>();
         }
         return items;
     }
+    /**
+     * Removes an item from the room.
+     * @param itemId the ID of the item to remove.
+     * @return true if the item was removed, false otherwise.
+     */
     public boolean removeItemFromRoom(String itemId){
         if (items == null){
             return false;
         }
         return items.remove(itemId);
     }
+
+    /**
+     * Adds an item to the room.
+     * @param itemId the ID of the item to add.
+     */
     public void addItemToRoom(String itemId){
         if(items == null){
             items = new ArrayList<>();
         }
         items.add(itemId);
     }
+    /**
+     * Gets the NPCs currently in this room.
+     * @return list of NPCs in the room.
+     */
     public ArrayList<NPC> getNpcsInRoom() {
         if (npcs == null){
             npcs = new ArrayList<>();
         }
         return npcs;
     }
+    /**
+     * Adds an NPC to the room.
+     * @param npc the NPC to add.
+     */
     public void AddNPCtoRoom(NPC npc){
         if (npcs == null){
             npcs = new ArrayList<>();
         }
         npcs.add(npc);
-    }
-    public boolean removeNPCFromRoom(NPC npc){
-        if (npcs == null){
-            return false;
-        }
-        return npcs.remove(npc);
     }
 }

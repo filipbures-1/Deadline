@@ -1,8 +1,6 @@
 package Commands;
-import Items.Inventory;
 import Characters.Player;
 import Items.Item;
-
 import java.util.ArrayList;
 
 public class Drop implements Commands{
@@ -11,7 +9,11 @@ public class Drop implements Commands{
         this.player = player;
     }
 
-
+    /**
+     * Executes the drop command, removing an item from the players inventory and adding it to the current room.
+     * @param commands command in the format "drop [item name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);

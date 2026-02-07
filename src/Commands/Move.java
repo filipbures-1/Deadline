@@ -1,11 +1,8 @@
 package Commands;
-
 import Characters.Player;
 import Items.Item;
 import Locations.Room;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Move implements Commands{
     private Player player;
@@ -13,7 +10,12 @@ public class Move implements Commands{
     public Move(Player player) {
         this.player = player;
     }
-
+    /**
+     * Executes the move command, moving the player to a neighboring room if possible.
+     * Checks if the room is locked and if the player has the required items to enter.
+     * @param commands command in the format "move [room name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);

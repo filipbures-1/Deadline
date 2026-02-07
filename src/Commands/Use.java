@@ -9,7 +9,11 @@ public class Use implements Commands {
     public Use(Player player) {
         this.player = player;
     }
-
+    /**
+     * Executes the use command, allowing the player to use specific items in certain rooms.
+     * @param commands command in the format "use [item name]".
+     * @return message about the action result.
+     */
     @Override
     public String execute(String commands) {
         String[] parts = commands.split(" ", 2);
