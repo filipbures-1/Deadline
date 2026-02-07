@@ -43,22 +43,26 @@ public class Player {
     public GameData getWorld(){
         return world;
     }
-
-    public void setCurrentRoom(Room currentRoom) {
-        CurrentRoom = currentRoom;
-        System.out.println("You are in: " + CurrentRoom.getName());
-        ArrayList<Room> neighbors = CurrentRoom.getNeighbors();
-        if (neighbors == null || neighbors.isEmpty()) {
-            System.out.println("Neighbours: none");
+    public void GetItemInfoFromRoom(){
+        ArrayList<String> itemsInRoom = CurrentRoom.getItemsInRoom();
+        if (itemsInRoom == null || itemsInRoom.isEmpty()) {
+            System.out.println("Items in the room: none");
         } else {
-            StringBuilder StringNeighbours = new StringBuilder("Neighbours: ");
-            for (Room room : neighbors) {
-                if (room != null && room.getName() != null) {
-                    StringNeighbours.append(room.getName()).append(", ");
+            StringBuilder StringItems = new StringBuilder("Items in the room: ");
+            for (String id : itemsInRoom) {
+                String ItemDisplayName = id;
+                for (Item item : world.items) {
+                    if (item.getId().equals(id)) {
+                        ItemDisplayName = item.getName();
+                        break;
+                    }
                 }
+                StringItems.append(ItemDisplayName).append(", ");
             }
-            System.out.println(StringNeighbours.toString());
+            System.out.println(StringItems.toString());
         }
+    }
+    public void GetNpcInfoFromRoom(){
         ArrayList<NPC> npcsInRoom = CurrentRoom.getNpcsInRoom();
         if (npcsInRoom == null || npcsInRoom.isEmpty()) {
             System.out.println("People in the room: none");
@@ -71,23 +75,28 @@ public class Player {
             }
             System.out.println(StringNPCs.toString());
         }
-        ArrayList<String> itemsInRoom = CurrentRoom.getItemsInRoom();
-        if (itemsInRoom == null || itemsInRoom.isEmpty()) {
-            System.out.println("Items in the room: none");
+    }
+    public void GetNeighbourInfoFromRoom(){
+        ArrayList<Room> neighbors = CurrentRoom.getNeighbors();
+        if (neighbors == null || neighbors.isEmpty()) {
+            System.out.println("Neighbours: none");
         } else {
-            StringBuilder StringItems = new StringBuilder("Items in the room: ");
-            for (String id : itemsInRoom) {
-                String ItemDisplayName = id;
-                    for (Item item : world.items) {
-                        if (item.getId().equals(id)) {
-                            ItemDisplayName = item.getName();
-                            break;
-                        }
-                    }
-                StringItems.append(ItemDisplayName).append(", ");
+            StringBuilder StringNeighbours = new StringBuilder("Neighbours: ");
+            for (Room room : neighbors) {
+                if (room != null && room.getName() != null) {
+                    StringNeighbours.append(room.getName()).append(", ");
+                }
             }
-            System.out.println(StringItems.toString());
+            System.out.println(StringNeighbours.toString());
         }
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        CurrentRoom = currentRoom;
+        System.out.println("You are in: " + CurrentRoom.getName());
+        GetNeighbourInfoFromRoom();
+        GetNpcInfoFromRoom();
+        GetItemInfoFromRoom();
     }
 
     public Player(String name, String description, Inventory inventory, Room currentRoom, Item currentItem, GameData world) {
