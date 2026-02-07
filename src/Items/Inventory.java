@@ -8,7 +8,9 @@ public class Inventory {
     public ArrayList<Item> getItemsFromInventory(){
         return items;
     }
-
+    public int getCapacity() {
+        return Capacity;
+    }
     public Inventory() {
         this.items = new ArrayList<>();
         Capacity = 5;

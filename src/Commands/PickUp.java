@@ -32,6 +32,9 @@ public class PickUp implements Commands{
         Item pickedItem = player.PickUpItem(itemToPick);
         if (pickedItem != null){
             return "You have picked up: " + pickedItem.getName();
+        }
+        if (player.getInventory().getItemsFromInventory().size()>= player.getInventory().getCapacity()){
+            return "Your inventory is full.";
         } else {
             return "This item isnt available yet.";
         }

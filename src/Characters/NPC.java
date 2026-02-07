@@ -1,20 +1,9 @@
 package Characters;
-
-import Items.Item;
-import Locations.Room;
-
 public class NPC {
     private String id;
     private String name;
     private String homeRoomId;
     private String description;
-
-    public String Dialog(){
-        return null;
-    }
-    public String GiftItem(Item item, Player player){
-        return null;
-    }
 
     public NPC(String id, String name, String homeRoomId, String description) {
         this.id = id;
@@ -35,7 +24,4 @@ public class NPC {
         return homeRoomId;
     }
 
-    public String getDescription() {
-        return description;
-    }
 }

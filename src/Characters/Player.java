@@ -1,10 +1,8 @@
 package Characters;
-
 import Items.Inventory;
 import Items.Item;
 import Locations.Room;
 import Main.GameData;
-
 import java.util.ArrayList;
 
 public class Player {
@@ -20,7 +18,6 @@ public class Player {
             return null;
         }
         if (!item.isPickable()) {
-            //System.out.println("You cannot pick up this item.");
             return null;
         }
         if (inventory == null){
@@ -33,28 +30,6 @@ public class Player {
             }
             return item;
         }
-        //System.out.println("Your inventory is full.");
-        return null;
-    }
-
-
-    public Item DropItem(Item item){
-        return null;
-    }
-    public Item StealItem(Item item){
-        return null;
-    }
-    public Item GiveItem(Item item){
-        return null;
-    }
-    public Item UseItem(Item item){
-        return null;
-    }
-    public Room MoveRooms(String roomMoveName){
-        CurrentRoom = CurrentRoom.GetNeighborByName(roomMoveName);
-        return CurrentRoom;
-    }
-    public String Talk(NPC npc){
         return null;
     }
 
@@ -64,9 +39,7 @@ public class Player {
     public Inventory getInventory(){
         return inventory;
     }
-    public Item getCurrentItem(){
-        return CurrentItem;
-    }
+
     public GameData getWorld(){
         return world;
     }
