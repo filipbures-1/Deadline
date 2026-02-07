@@ -49,7 +49,6 @@ public class Move implements Commands{
                 }
 
             }
-
             if (!itemsMissing.isEmpty()) {
                 return "You cant go home yet you are still missing: " + itemsMissing + " to help you finish the homework.";
             }

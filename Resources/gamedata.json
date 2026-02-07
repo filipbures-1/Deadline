@@ -102,7 +102,7 @@
       "name": "Adams house",
       "description": "It is just Adams house, this is where he does all of his homework",
       "neighborIds": ["loc_schoolyard"],
-      "locked": true,
+      "isLocked": true,
       "itemsrequiered": ["item_homeworklist", "item_cheatsheet", "item_homeworkphoto"]
     },
     {
