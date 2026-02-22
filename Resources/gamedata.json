@@ -59,7 +59,7 @@
       "id": "item_completedhomework",
       "name": "Completed homework",
       "description": "Completed homework and ready to turn in",
-      "isPickable": true,
+      "isPickable": false,
       "isDropable": true,
       "PlacedRoomId": "loc_adamshouse"
     }
