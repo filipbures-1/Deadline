@@ -1,8 +1,7 @@
 package Commands;
 import Characters.Player;
 import javax.imageio.IIOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 public class Map implements Commands{
     private Player player;
@@ -17,18 +16,23 @@ public class Map implements Commands{
      */
     @Override
     public String execute(String commands) {
-        String text = "";
-        try { BufferedReader mapreader = new BufferedReader(new FileReader("Resources/map"));
+        String helpLine = "";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("map");
+        if (inputStream == null) {
+            return "Unable to load map file.";
+        }
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
-            while ((line = mapreader.readLine()) != null) {
-                text += line + "\n";
+            while ((line = bufferedReader.readLine()) != null) {
+                helpLine += line + "\n";
             }
-        } catch (IIOException e){
-            System.out.println("Unable to load map");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return text;
+        return helpLine;
     }
 
     @Override

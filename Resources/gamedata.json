@@ -94,6 +94,12 @@
       "name": "Principal",
       "homeRoomId": "loc_principalsoffice",
       "description": "Grumpy principal that hates students that turn in their homework last second. Turn in your homework to finally be done"
+    },
+    {
+      "id": "npc_adamsmother",
+      "name": "Adams mom",
+      "homeRoomId": "loc_adamshouse",
+      "description": "Adams mom is often very angry at Adam for not doing his homework. Always has something to say about it."
     }
   ],
   "rooms": [

@@ -1,7 +1,5 @@
 package Commands;
-import javax.imageio.IIOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 public class Help implements Commands{
     /**
@@ -11,18 +9,23 @@ public class Help implements Commands{
      */
     @Override
     public String execute(String commands) {
-        String text = "";
-        try { BufferedReader helpreader = new BufferedReader(new FileReader("Resources/help"));
+        String helpLine = "";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("help");
+        if (inputStream == null) {
+            return "Unable to load help file.";
+        }
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
-            while ((line = helpreader.readLine()) != null) {
-                text += line + "\n";
+            while ((line = bufferedReader.readLine()) != null) {
+                helpLine += line + "\n";
             }
-        } catch (IIOException e){
-            System.out.println("Unable to help tab.");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return text;
+        return helpLine;
     }
 
     @Override

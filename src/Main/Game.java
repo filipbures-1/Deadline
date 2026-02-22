@@ -3,9 +3,7 @@ import Characters.Player;
 import Commands.Commands;
 import Commands.*;
 import Items.Inventory;
-import javax.imageio.IIOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -45,19 +43,23 @@ public class Game {
      * @return starting text.
      */
     public String StartingText(){
-            String text = "";
-            try { BufferedReader startingtextreader = new BufferedReader(new FileReader("Resources/startingtext"));
-                String line;
-                while ((line = startingtextreader.readLine()) != null) {
-                    text += line + "\n";
-                }
-            } catch (IIOException e){
-                System.out.println("Unable to load starting text.");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+        String helpLine = "";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("startingtext");
+        if (inputStream == null) {
+            return "Unable to load starting text.";
+        }
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                helpLine += line + "\n";
             }
-            //System.out.println(text); // this method doesnt work without this system.out.println for some reason
-            return text;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return helpLine;
     }
     /**
      * Starts the game loop, processing user commands until exit.
@@ -65,7 +67,7 @@ public class Game {
      * Displayed to the player.
      */
     public void start() {
-        StartingText();
+        System.out.println(StartingText());
         inicialization();
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
