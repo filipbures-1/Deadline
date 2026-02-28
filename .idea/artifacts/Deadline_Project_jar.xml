@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Deadline-Project:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Deadline_Project_jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts</output-path>
     <root id="archive" name="Deadline-Project.jar">
       <element id="module-output" name="Deadline-Project" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar" path-in-jar="/" />

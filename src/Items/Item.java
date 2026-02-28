@@ -12,12 +12,13 @@ public class Item {
 
     }
 
-    public Item(String name, String description, String id, boolean isPickable, boolean isDropable) {
+    public Item(String name, String description, String id, boolean isPickable, boolean isDropable, String placedRoomId) {
         this.name = name;
         this.description = description;
         this.id = id;
         this.isPickable = isPickable;
         this.isDropable = isDropable;
+        this.PlacedRoomId = placedRoomId;
     }
 
     public boolean isDropable() {
